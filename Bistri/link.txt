@@ -1,0 +1,34 @@
+video calling full code 
+ open tokbox
+
+
+bistri 
+https://www.youtube.com/watch?v=LFR4__GHJTI
+
+https://pastebin.com/y25keqGE    -->bistri
+
+videocalling5 on desktop
+
+p2p
+
+https://github.com/shama/letswritecode/tree/master/p2p-video-chat-webrtc  -->youtube (downlink)
+
+https://www.youtube.com/watch?v=ieBtXwHvoNk
+
+
+https://tokbox.com/developer/tutorials/web/basic-video-chat/
+
+https://www.youtube.com/watch?v=f1nKeZ6kfBs
+
+https://www.youtube.com/results?search_query=video+calling+using+javascript+opentok
+
+https://www.youtube.com/results?search_query=video+calling+full+code+
+
+https://www.youtube.com/watch?v=dQX22z5JhQM
+
+https://www.youtube.com/watch?v=Ek4u8VyUUW8
+
+https://www.youtube.com/watch?v=6mwFCS9GCVI
+
+https://www.youtube.com/watch?v=dQX22z5JhQM
+
