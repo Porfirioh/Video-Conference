@@ -37,12 +37,14 @@ onBistriConferenceReady = function () {
         // then stop the script execution
         return;
     }
+    
     // initialize API client with application keys
     // if you don't have your own, you can get them at:
     // https://api.developers.bistri.com/login
     bc.init( {
-        "appId": "38077edb",
-        "appKey": "4f304359baa6d0fd1f9106aaeb116f33"
+    //I removed my APPID and APP key (Add Ur Keys here)
+        "appId": " ",//use ur own Keys 
+        "appKey": " "//use ur own Keys 
     } );
     
     /* Set events handler */
