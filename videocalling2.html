@@ -1,0 +1,71 @@
+<html>
+<body>
+<!-- OpenTok.js library -->
+<script src="https://static.opentok.com/v2/js/opentok.js"></script>
+<script type="text/javascript" src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js"></script>
+<div id="myPublisherDiv"></div>
+<div id="subcribe"></div>
+<script>
+
+var apiKey = '45828062';
+var sessionId = '1_MX40NTgyODA2Mn5-MTQ5ODEzODUwNDI2NH5IRldmYlhZc3NJYlRSaTNwYTFBc2lzRTh-UH4'; //or room-id
+var token = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9MTkxMzBlNGVkMmQyOGQ5NGQyMWQ1ZmEzNDM1YzE3NzA0NWVjMWYwNDpzZXNzaW9uX2lkPTFfTVg0ME5UZ3lPREEyTW41LU1UUTVPREV6T0RVd05ESTJOSDVJUmxkbVlsaFpjM05KWWxSU2FUTndZVEZCYzJselJUaC1VSDQmY3JlYXRlX3RpbWU9MTQ5ODEzODgyNyZub25jZT0wLjcyNjE2MTE0NDA1MjcwNTYmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTQ5ODIyNTIyNw==';
+  
+
+var publisher = TB.initPublisher(apiKey, ‘myPublisherDiv’);
+
+var session = TB.initSession(sessionId); //after creating a session we need to create a token .
+
+
+session.addEventListener('sessionConnected',function(e)
+{
+ alert("we are connected!!!");
+});
+
+
+   // create publisher
+  var publisher = TB.initPublisher(apiKey,'myPublisherDiv');
+  var session=TB.initSession(sessionId);
+  session.addEventListener(‘sessionConnected’, function(e){
+   session.publish( publisher );
+   for(var i=0;i<e.streams.length;i++){
+    if (streams[i].connection.connectionId == session.connection.connectionId) 
+     {
+       return;
+     }   
+   
+    session.subcribe(e.streams[i]);
+    }
+});
+
+
+var div = document.createElement(‘div’);
+div.setAttribute(‘id’, ‘stream’ + streams[i].streamId);
+document.body.appendChild(div);
+
+session.subscribe(streams[i], div.id);
+}
+
+
+session.addEventListener('streamCreated', function(e) {
+ 
+for (var i = 0; i < e.streams.length; i++) {
+// Make sure we don’t subscribe to ourself
+if (streams[i].connection.connectionId == session.connection.connectionId) {
+return;
+}
+// Create the div to put the subscriber element in to
+var div = document.createElement(‘div’);
+div.setAttribute(‘id’, ‘stream’ + streams[i].streamId);
+document.body.appendChild(div);
+session.subscribe(streams[i], div.id);
+}
+});
+
+session.connect( apiKey, token );
+
+
+</script>
+
+</body>
+ </html>
